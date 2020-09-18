@@ -9,7 +9,7 @@ const parser = new parsers.Readline({
     delimiter: '\r\n'
 });
 
-var port = new SerialPort('/dev/tty.usbmodem1421',{ 
+var port = new SerialPort('/dev/tty.wchusbserialfa1410',{ 
     baudRate: 9600,
     dataBits: 8,
     parity: 'none',

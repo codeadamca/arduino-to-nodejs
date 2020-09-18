@@ -3,22 +3,17 @@
     <head>
         
         <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js'></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         <script>
             
-        $(document).ready(function(){
-            
-            var socket = io();
+        var socket = io();
 
-            socket.on('data', function(data) {
-                
-                console.log(data);
-                
-                $('#sample').css('opacity',data/100); 
-                
-            });
+        socket.on('data', function(data) {
             
+            console.log(data);
+            
+            document.getElementById('sample').style.opacity = data/100+"%"; 
+
         });
         
         </script>
@@ -36,6 +31,8 @@
     </head>
     <body>
         
+        <h1>Communicating from an Arduino to Node.js</h1>
+
         <div id="sample"></div>
         
     </body>
