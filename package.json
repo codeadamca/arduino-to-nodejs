@@ -4,6 +4,6 @@
     "description": "Sample communication from an HTML document to a NodeJS using socket.io.",
     "dependencies": {
         "socket.io": "^2.0.4",
-        "serialport": "^6.0.5"
+        "serialport": "^9.0.1"
     }
 }
