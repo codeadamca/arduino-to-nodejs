@@ -161,6 +161,8 @@ You will need to setup the following circuit using your Arduino:
 * [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
 * [Filezilla](https://filezilla-project.org/) (or any FTP program)
 * [Arduino Create](https://create.arduino.cc/editor) 
+* [SerialPort NPM](https://www.npmjs.com/package/serialport)
+* [Socket.io](https://socket.io/)
 
 Full tutorial URL: https://codeadam.ca/learning/arduino-to-nodejs.html
 
