@@ -57,7 +57,7 @@ ls /dev/{tty,cu}.*
 On a PC you can use the command line and the following command:
 
 ```
-
+chgport
 ```
 
 Or you can find the name in [Arduino Create](https://create.arduino.cc/editor) in the drop down menu used to select your Arduino.
