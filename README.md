@@ -60,6 +60,18 @@ On a PC you can use the command line and the following command:
 chgport
 ```
 
+On my PC when I use the `chgport` command I get the following output:
+
+```
+AUX = \DosDevices\COM1
+COM1 = \Device\Serial0
+COM3 = \Device\Serial2
+```
+
+In my Node.js I would use `\Device\Serial2` as my serialport string.
+
+If you're not sure which one is your Arduino, just disconnet your Arduino and execute the cpommand again and take note of which port is no longer on the list. 
+
 Or you can find the name in [Arduino Create](https://create.arduino.cc/editor) in the drop down menu used to select your Arduino.
 
 Create a file called `app.js` and add the following code:
