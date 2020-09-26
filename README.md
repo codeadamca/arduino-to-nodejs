@@ -68,7 +68,7 @@ COM1 = \Device\Serial0
 COM3 = \Device\Serial2
 ```
 
-In my Node.js I would use `\Device\Serial2` as my serialport string.
+In my Node.js I would use `COM3` as my serialport string.
 
 If you're not sure which one is your Arduino, just disconnet your Arduino and execute the cpommand again and take note of which port is no longer on the list. 
 
