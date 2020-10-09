@@ -18,8 +18,8 @@ Create an HTML file called `index.html`. Add the following code:
     var socket = io();
 
     socket.on('data', function(data) {
-      console.log(data);
-      document.getElementById('sample').style.opacity = data/100+"%"; 
+        console.log(data);
+        document.getElementById('sample').style.opacity = data+"%"; 
     });
 
     </script>
@@ -163,9 +163,9 @@ You will need to setup the following circuit using your Arduino:
 
 ## Launch Application
 
-1. Using the Terminal start your Node.js app using `node app.js`.
-2. Open up a browser and enter the URL `http://localhost:3000/`.
-3. Using [Arduino Create](https://create.arduino.cc/editor) upload the sketch to your Arduino.
+1. Using [Arduino Create](https://create.arduino.cc/editor) upload the sketch to your Arduino.
+2. Using the Terminal start your Node.js app using `node app.js`.
+3. Open up a browser and enter the URL `http://localhost:3000/`.
 4. Turn the dial on the Arduino device and watch the red square in the browser.t. 
 
 ## Tutorial Requirements:
