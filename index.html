@@ -3,20 +3,6 @@
     <head>
         
         <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js'></script>
-
-        <script>
-            
-        var socket = io();
-
-        socket.on('data', function(data) {
-            
-            console.log(data);
-            
-            document.getElementById('sample').style.opacity = data+"%"; 
-
-        });
-        
-        </script>
         
         <style>
         
@@ -34,6 +20,20 @@
         <h1>Communicating from an Arduino to Node.js</h1>
 
         <div id="sample"></div>
+        
+        <script>
+            
+        var socket = io();
+
+        socket.on('data', function(data) {
+            
+            console.log(data);
+            
+            document.getElementById('sample').style.opacity = data+"%"; 
+
+        });
+        
+        </script>
         
     </body>
 </html>
