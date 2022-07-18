@@ -1,4 +1,4 @@
-# arduino-to-nodejs
+# Communicating Between an Arduino and a Node.js Server
 
 This tutorial will walkthrough the process of creating an Arduino IOT device that controls aspects fo a website. In this example the website will simpy display a red block that will fade when a dial on an Arduino is adjusted. 
 
