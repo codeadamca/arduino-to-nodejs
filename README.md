@@ -1,6 +1,6 @@
 # Communicating Between an Arduino and a Node.js Server
 
-This tutorial will walkthrough the process of creating an Arduino IOT device that controls aspects fo a website. In this example the website will simpy display a red block that will fade when a dial on an Arduino is adjusted. 
+This tutorial will walkthrough the process of creating an Arduino IOT device that controls aspects fo a website. In this example the website will simpy display a red block that will fade when a dial on an Arduino is adjusted.
 
 ## HTML and JavaScript
 
@@ -19,7 +19,7 @@ Create an HTML file called `index.html`. Add the following code:
 
     socket.on('data', function(data) {
         console.log(data);
-        document.getElementById('sample').style.opacity = data+"%"; 
+        document.getElementById('sample').style.opacity = data+"%";
     });
 
     </script>
@@ -70,64 +70,60 @@ COM3 = \Device\Serial2
 
 In my Node.js I would use `COM3` as my serialport string.
 
-If you're not sure which one is your Arduino, just disconnet your Arduino and execute the cpommand again and take note of which port is no longer on the list. 
+If you're not sure which one is your Arduino, just disconnet your Arduino and execute the cpommand again and take note of which port is no longer on the list.
 
 Or you can find the name in [Arduino Create](https://create.arduino.cc/editor) in the drop down menu used to select your Arduino.
 
 Create a file called `app.js` and add the following code:
 
 ```javascript
-var http = require('http');
-var fs = require('fs');
-var index = fs.readFileSync( 'index.html');
+var http = require("http");
+var fs = require("fs");
+var index = fs.readFileSync("index.html");
 
-var SerialPort = require('serialport');
+var SerialPort = require("serialport");
 const parsers = SerialPort.parsers;
 
 const parser = new parsers.Readline({
-  delimiter: '\r\n'
+  delimiter: "\r\n",
 });
 
-var port = new SerialPort('/dev/tty.wchusbserialfa1410',{ 
+var port = new SerialPort("/dev/tty.wchusbserialfa1410", {
   baudRate: 9600,
   dataBits: 8,
-  parity: 'none',
+  parity: "none",
   stopBits: 1,
-  flowControl: false
+  flowControl: false,
 });
 
 port.pipe(parser);
 
-var app = http.createServer(function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
+var app = http.createServer(function (req, res) {
+  res.writeHead(200, {"Content-Type": "text/html"});
   res.end(index);
 });
 
-var io = require('socket.io').listen(app);
+var io = require("socket.io").listen(app);
 
-io.on('connection', function(socket) {
-    
-  console.log('Node is listening to port');
-    
+io.on("connection", function (socket) {
+  console.log("Node is listening to port");
 });
 
-parser.on('data', function(data) {
-    
-  console.log('Received data from port: ' + data);
-  io.emit('data', data);
-    
+parser.on("data", function (data) {
+  console.log("Received data from port: " + data);
+  io.emit("data", data);
 });
 
 app.listen(3000);
 ```
 
-The above code listend for a message from the Arduino over the USD port and then passes a message onto the HTML/JavaScript using Socket.io. 
+The above code listend for a message from the Arduino over the USD port and then passes a message onto the HTML/JavaScript using Socket.io.
 
 > Note: Make sure to change the name of the serialport.
 
 ## The Arduino
 
-Using [Arduino Create](https://create.arduino.cc/editor) create the following sketch and upload it to your Arduino. 
+Using [Arduino Create](https://create.arduino.cc/editor) create the following sketch and upload it to your Arduino.
 
 ```csharp
 int percent = 0;
@@ -138,16 +134,16 @@ void setup() {
 }
 
 void loop() {
-  
+
   percent = round(analogRead(0) / 1024.00 * 100);
-  
+
   if(percent != prevPercent) {
     Serial.println(percent);
     prevPercent = percent;
   }
-  
+
   delay(100);
-  
+
 }
 ```
 
@@ -157,7 +153,7 @@ The previous code will generate a percentage pased on the dial and pass the numb
 
 You will need to setup the following circuit using your Arduino:
 
-![Tinkercad Circuit](https://raw.githubusercontent.com/codeadamca/arduino-to-nodejs/master/tinkercad-to-nodejs.png)
+![Tinkercad Circuit](_readme/tinkercad-to-nodejs.png)
 
 [View the Circuit on Tinkercad](https://www.tinkercad.com/things/5Siec0jdhZo-arduinotobrowser)
 
@@ -170,15 +166,13 @@ You will need to setup the following circuit using your Arduino:
 
 ## Tutorial Requirements:
 
-* [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
-* [Arduino Create](https://create.arduino.cc/editor) 
-* [SerialPort NPM](https://www.npmjs.com/package/serialport)
-* [Socket.io](https://socket.io/)
+- [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
+- [Arduino Create](https://create.arduino.cc/editor)
+- [SerialPort NPM](https://www.npmjs.com/package/serialport)
+- [Socket.io](https://socket.io/)
 
 Full tutorial URL: https://codeadam.ca/learning/arduino-to-nodejs.html
 
 <a href="https://codeadam.ca">
 <img src="https://codeadam.ca/images/code-block.png" width="100">
 </a>
-
-
