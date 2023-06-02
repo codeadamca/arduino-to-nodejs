@@ -164,14 +164,17 @@ You will need to setup the following circuit using your Arduino:
 3. Open up a browser and enter the URL `http://localhost:3000/`.
 4. Turn the dial on the Arduino device and watch the red square in the browser.
 
-## Tutorial Requirements:
+---
 
-- [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
+## Repo Resources
+
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Arduino Create](https://create.arduino.cc/editor)
 - [SerialPort NPM](https://www.npmjs.com/package/serialport)
 - [Socket.io](https://socket.io/)
 
-Full tutorial URL: https://codeadam.ca/learning/arduino-to-nodejs.html
+> Full tutorial URL:  
+> https://codeadam.ca/learning/arduino-to-nodejs.html
 
 <a href="https://codeadam.ca">
 <img src="https://codeadam.ca/images/code-block.png" width="100">
