@@ -149,13 +149,13 @@ void loop() {
 
 The previous code will generate a percentage pased on the dial and pass the number on to the Node.js server using the serialport.
 
-[View the Arduino code on Arduino Create](https://create.arduino.cc/editor/professoradam/da29d7ec-2df5-4528-82ce-817710aadb1a/preview)
+> [View the Arduino code on Arduino Create](https://create.arduino.cc/editor/professoradam/da29d7ec-2df5-4528-82ce-817710aadb1a/preview)
 
 You will need to setup the following circuit using your Arduino:
 
 ![Tinkercad Circuit](_readme/tinkercad-to-nodejs.png)
 
-[View the Circuit on Tinkercad](https://www.tinkercad.com/things/5Siec0jdhZo-arduinotobrowser)
+> [View the Circuit on Tinkercad](https://www.tinkercad.com/things/5Siec0jdhZo-arduinotobrowser)
 
 ## Launch Application
 
