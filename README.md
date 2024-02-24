@@ -119,7 +119,8 @@ app.listen(3000);
 
 The above code listend for a message from the Arduino over the USD port and then passes a message onto the HTML/JavaScript using Socket.io.
 
-> Note: Make sure to change the name of the serialport.
+> [!Note]
+> Make sure to change the name of the serialport.
 
 ## The Arduino
 
